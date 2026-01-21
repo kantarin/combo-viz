@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Settings, Info, RefreshCw, Calculator, Layers, LayoutGrid } from 'lucide-react'
+import { Calculator, Layers } from 'lucide-react'
 
 // Math Helpers
 const factorial = (n: number): number => {
@@ -30,11 +30,6 @@ export default function App() {
     setItems(Array.from({ length: newN }, (_, i) => i + 1));
     if (r > newN) setR(newN);
   };
-
-  const selectedIndices = useMemo(() => {
-    // Just a preview of "one" possible selection
-    return Array.from({ length: r }, (_, i) => i);
-  }, [r]);
 
   return (
     <div className="app-container">
